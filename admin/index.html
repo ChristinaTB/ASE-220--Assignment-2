@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- admin index.html
+   database url : https://jsonblob.com/faa57e71-694d-11eb-b382-534567e98d23  -->
+<html>
+    <head>
+        <title>Bucket List</title>
+        <!-- bootstrap css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        .carousel-inner
+        {
+           width: 75%;
+           margin-right: auto;
+           margin-left: auto;
+            
+        }
+       
+
+    </style>
+    
+    </head>
+    <body>
+  <!-- jquery  -->
+  <script src="../assets/jquery-3.5.1.min.js"></script>
+  <script>
+    $.getJSON('https://jsonblob.com/api/jsonBlob/faa57e71-694d-11eb-b382-534567e98d23 ', function(data){
+      
+    
+      $(document).ready(function(){
+            $('#japanCard').append('<h4><a href="article.html?index='+ 0+'"><strong>' + data[0].location +'</strong></a></h4>') ;
+            $('#japanCardUsername').append('<em>' + data[0].username +'</em>') ;
+            $('#topImageJapan').html('<img src="'+ data[0].picture +'"style = "height:150px; width: 100%"" />');
+            $('#editJapan').append('<a href="edit.html?index='+ 0+'">Edit</a>') ;
+
+            $('#vegasCard').append('<h4><a href="article.html?index='+ 1+'"><strong>' + data[1].location +'</strong></a></h4>') ;
+            $('#vegasCardUsername').append('<em>' + data[1].username +'</em>') ;
+            $('#topImageVegas').html('<img src="'+ data[1].picture +'"style = "height:150px; width: 100%"" />');
+            $('#editVegas').append('<a href="edit.html?index='+ 1+'">Edit</a>') ;
+
+            $('#parisCard').append('<h4><a href="article.html?index='+ 2+'"><strong>' + data[2].location +'</strong></a></h4>') ;
+            $('#parisCardUsername').append('<em>' + data[2].username +'</em>') ;
+            $('#topImageParis').html('<img src="'+ data[2].picture +'"style = "height:150px; width: 100%"" />');
+            $('#editParis').append('<a href="edit.html?index='+ 2+'">Edit</a>') ;
+
+            $('#bahamasCard').append('<h4><a href="article.html?index='+ 3+'"><strong>' + data[3].location +'</strong></a></h4>') ;
+            $('#bahamasCardUsername').append('<em>' + data[3].username +'</em>') ;
+            $('#topImageBahamas').html('<img src="'+ data[3].picture +'"style = "height:150px; width: 100%"" />');
+            $('#editBahamas').append('<a href="edit.html?index='+ 3+'">Edit</a>') ;
+
+            $('#dubaiCard').append('<h4><a href="article.html?index='+ 4+'"><strong>' + data[4].location +'</strong></a></h4>') ;
+            $('#dubaiCardUsername').append('<em>' + data[4].username +'</em>') ;
+            $('#topImageDubai').html('<img src="'+ data[4].picture +'"style = "height:150px; width: 100%"" />');
+            $('#editDubai').append('<a href="edit.html?index='+ 4+'">Edit</a>') ;
+
+            $('#sydneyCard').append('<h4><a href="article.html?index='+ 5+'"><strong>' + data[5].location +'</strong></a></h4>') ;
+            $('#sydneyCardUsername').append('<em>' + data[5].username +'</em>') ;
+            $('#topImageSydeney').html('<img src="'+ data[5].picture +'"style = "height:150px; width: 100%"" />');
+            $('#editSydney').append('<a href="edit.html?index='+ 5+'">Edit</a>') ;
+
+      });
+
+
+    
+
+    });
+
+  </script>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Bucketlist- Admin Page</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="create.html">Create new blog</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+        <div id = "main" class = "container-fluid" >
+            <div class ="row" style = "margin-top: 150px;" >
+              <div id="mainCarousel" class="carousel-dark carousel slide" data-bs-ride="carousel" >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="card-group"  >
+                      <div class="card ">
+                        <div id =  "topImageJapan"></div>
+                        <div class="card-body text-center" >
+                          <p class="card-text" id = "japanCard"> </p>
+                        </div>
+                        <div class="card-footer" id = "japanCardUsername">
+                          <small class="text-muted">By:  </small>
+                        
+                        </div>
+                        <div class = "row text-center">
+                          <small id = "editJapan"></small>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id =  "topImageVegas"></div>
+                        <div class="card-body text-center">
+                          <p class="card-text" id = "vegasCard"> </p>
+                        </div>
+                        <div class="card-footer" id = "vegasCardUsername">
+                          <small class="text-muted">By: </small>
+                        </div>
+                        <div class = "row text-center">
+                          <small id = "editVegas"></small>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id =  "topImageParis"></div>
+                        <div class="card-body text-center">
+                          <p class="card-text" id = "parisCard"></p>
+                        </div>
+                        <div class="card-footer" id = "parisCardUsername">
+                          <small class="text-muted">By: </small>
+                        </div>
+                        <div class = "row text-center">
+                          <small id = "editParis"></small>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card-group">
+                      <div class="card">
+                        <div id = "topImageBahamas"></div>
+                        <div class="card-body text-center">
+                          <p class="card-text" id = "bahamasCard"></p>
+                        </div>
+                        <div class="card-footer" id = "bahamasCardUsername">
+                          <small class="text-muted">By: </small>
+                        </div>
+                        <div class = "row text-center">
+                          <small id = "editBahamas"></small>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id = "topImageDubai"></div>
+                        <div class="card-body text-center">
+                          <p class="card-text" id = "dubaiCard"></p>
+                        </div>
+                        <div class="card-footer" id = "dubaiCardUsername">
+                          <small class="text-muted">By: </small>
+                        </div>
+                        <div class = "row text-center">
+                          <small id = "editDubai"></small>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div id = "topImageSydeney"></div>
+                        <div class="card-body text-center">
+                          <p class="card-text" id = "sydneyCard"></p>
+                        </div>
+                        <div class="card-footer" id = "sydneyCardUsername">
+                          <small class="text-muted">By: </small>
+                        </div>
+                        <div class = "row text-center">
+                          <small id = "editSydney"></small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+                <a class="carousel-control-prev" href="#mainCarousel" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#mainCarousel" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+            </div>
+       
+          
+            <div  id= "showall"class = "row text-center p-2">
+              <p></p>
+            </div>
+
+              
+        </div>
+
+        <!-- jquery  -->
+        <!-- <script src="assets/jquery-3.5.1.min.js"></script> -->
+
+        <!-- bootstrap scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+        <script>
+           var myCarousel = document.querySelector('#mainCarousel')
+            var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: false,
+            wrap: true
+            })
+            $.getJSON('https://jsonblob.com/api/jsonBlob/faa57e71-694d-11eb-b382-534567e98d23', function(data)
+            {
+                //console.log(data);
+                //to loop through the menu
+                for(var i = 0; i <data.length;i++){
+                   // console.log(data[i]);
+                   //to add items to the menu
+                    $('#showall').append('<ul style = "width:400px;"><li class = "list-group"><a href="../article.html?index='+i+'">' + data[i].location +'  <i>' + data[i].title + '</i></a> </li>' + '<a href="edit.html?index='+ i +'">Edit</a><ul>'  );
+                }
+            });
+
+
+
+        </script>
+    </body>
+</html>
